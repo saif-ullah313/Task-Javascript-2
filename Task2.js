@@ -61,32 +61,26 @@ let arr = [1,2,3,4,5];
          return a+b;
  });
  document.getElementById("result5").innerHTML= `The sum of new Array elements : ${sumOfPositiveNum}`;
-
-
-
-/************************************************************************************** */
-//Question No 06:
-//Calculate the mean and median values of the number elements from the input array.
-
-// let arr5 = [2,3,5,7,9,21,25]
-// function calculateMean(){
-//     let searchvalue = arr5.filter(numb=> typeof numb === 'number');
-//     let sum = arr5.reduce((a,b)=>a+b,0);
-//     let mean = sum/arr5.length;
-//     return mean;
-    
-    
-// }
-// calculateMean(numb);
-// console.log(mean)
-
    
-/******************************************************************************************* */
-//Question No 07:
-//
+
 /************************************************************************************* */
 //Question No 08:
-//
+//Find the difference in age between the oldest and youngest family members, and return their respective ages and the age difference.
+
+// let oldestage = prompt("Enter the oldest age");
+// let youngestage = prompt("Enter the youngest age");
+const family = [
+    { name: "Ali", age: 70 },
+    { name: "Balil", age: 50 },
+    { name: "Usman", age: 30 },
+    { name: "Waqas", age: 10 }
+  ];
+
+  // Find the oldest and youngest members
+  const oldest = family.reduce((max, member) => member.age > max.age ? member : max, family[0]);
+  const youngest = family.reduce((min, member) => member.age < min.age ? member : min, family[0]);
+let agedifference = oldest-youngest;
+console.log(agedifference);
 
 
 /******************************************************************************************** */
@@ -111,7 +105,7 @@ document.getElementById("result10").innerHTML = `New Array with even numbers : [
 
 let arr10 = ['ali','usmanali','saifullah','ammadkhanjadoon'];
 let checklength= arr10.filter(value=> value.length>=5);
-console.log(checklength);
+//console.log(checklength);
 document.getElementById("result11").innerHTML=`New Array with check length of string: [ ${checklength} ]`;
 /************************************************************************************** */
 //Question No 12:
@@ -130,8 +124,45 @@ document.getElementById("result13").innerHTML=findred;
 
 /*************************************************************************************** */
 //Question No 13:
-//2. create an object. const persons = [
-  //  {firstname : "Malcom", lastname: "Reynolds"},
-  //  {firstname : "Kaylee", lastname: "Frye"},
-  //  {firstname : "Jayne", lastname: "Cobb"}
- // ]; a) iterate it with map() and print the last names in the browser. b) Add Mr  with the last name and show it in the console. 
+//2. create an object. a) iterate it with map() and print the last names in the browser. b) Add Mr  with the last name and show it in the console. 
+
+const persons = [
+     {firstname : "Malcom", lastname: "Reynolds"},
+      {firstname : "Kaylee", lastname: "Frye"},
+  {firstname : "Jayne", lastname: "Cobb"}
+    ];
+
+    let lastnames = persons.map(people=>people.lastname)
+    console.log(lastnames);
+    document.getElementById("result14").innerHTMSL=`The lastname of persons are: [ ${lastnames} ]`;
+    let lastnamesadd = lastnames.map(lastname => 'Mr ' + lastname);
+   
+        // console.log(lastnamesadd);
+   
+    document.getElementById("result15").innerHTML = 'The New array is [ ' + lastnamesadd +  ' ]';
+    /**************************************************************************************** */
+    //Question No 14:
+    //3. create an array i.e. array = ['javaScript' , 'CSS', 'HTML' , 'react js' , 'data structures and algorithms']. a) first iterate the array with map(). b) check if react js is present in the array or not using filter().
+    let array = ['javaScript' , 'CSS', 'HTML' , 'react js' , 'data structures and algorithms'];
+    let arrayiterate = array.map(value);
+    //console.log(arrayiterate);
+    document.getElementById("result16").innerHTML= `[  ${arrayiterate}  ] `;
+    let checkarray = array.filter(value=>value =='react js');
+    //console.log(checkarray);
+    document.getElementById("result17").innerHTML=`The ${checkarray}  is present in the array.`
+    /****************************************************************************************************** */
+    //Question No 15
+    //4. arary  = ['rameen' , 'rashid', 'ali' , 'alina' , 'aliya' , 'mahnoor' , 'mehwish' , 'sana' , 'tahira' , 'taimoor'']. a) iterate the array elements with map(). b) create a search field and enter some value (i.e. any name). if search matches any name in the array then only that name must be visible.
+
+    let arary  = ['rameen' , 'rashid', 'ali' , 'alina' , 'aliya' , 'mahnoor' , 'mehwish' , 'sana' , 'tahira' , 'taimoor']
+
+    let araryiterate= arary.map(value);
+    document.getElementById("result18").innerHTML=`[  ${araryiterate}  ]`;
+    //console.log(araryiterate);
+   
+    let arar = prompt("Enter the name");
+    let arar1 = araryiterate.filter(value=>value ==arar);
+    document.getElementById("result19").innerHTML = `The name is : [ ${arar1} ]`;
+    //console.log(arar1);
+
+/************************************************************************************************************** */
